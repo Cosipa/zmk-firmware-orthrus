@@ -1,0 +1,26 @@
+#include "orthrus.dtsi"
+
+&default_transform {
+    col-offset = <6>;
+};
+
+&kscan0 {
+    row-gpios
+        = <&pro_micro 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 0 (P008)
+        , <&pro_micro 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 1 (P017)
+        , <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 2 (P002)
+        , <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 3 (P029)
+        , <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 4 (P031)
+        ;
+
+    col-gpios
+        = <&pro_micro 9  GPIO_ACTIVE_HIGH> // P106
+        , <&pro_micro 8  GPIO_ACTIVE_HIGH> // P104
+        , <&pro_micro 7  GPIO_ACTIVE_HIGH> // P011
+        , <&pro_micro 6  GPIO_ACTIVE_HIGH> // P100
+        , <&pro_micro 5  GPIO_ACTIVE_HIGH> // P024
+        , <&pro_micro 10 GPIO_ACTIVE_HIGH> // P009
+        , <&pro_micro 15 GPIO_ACTIVE_HIGH> // P113
+        , <&pro_micro 1  GPIO_ACTIVE_HIGH> // P006
+        ;
+};
