@@ -23,7 +23,8 @@
 
         backspace_op {
             bindings = <&kp BACKSPACE>;
-            key-positions = <23 24>;
+            key-positions = <37 38>;
+            timeout-ms = <50>;
         };
 
         altgr_combo {
