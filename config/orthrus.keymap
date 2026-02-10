@@ -34,16 +34,27 @@
         };
     };
 
+    behaviors {
+        keychord: keychord {
+            compatible = "zmk,behavior-hold-tap";
+            label = "KEYCHORD";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         MAIN {
             bindings = <
-&kp GRAVE   &kp N1  &kp N2    &kp N3  &kp N4    &kp N5       &kp N6     &kp N7         &kp N8     &kp N9      &kp N0         &kp MINUS   &kp EQUAL  &kp C_AL_MAIL
-&kp TAB     &kp Q   &kp W     &kp E   &kp R     &kp T        &kp Y      &kp U          &kp I      &kp O       &kp P          &kp LBKT    &kp RBKT   &kp BACKSPACE
-&kp ESC     &kp A   &kp S     &kp D   &kp F     &kp G        &kp H      &kp J          &kp K      &kp L       &kp SEMI       &kp SQT     &kp BSLH   &kp ENTER
-&kp LSHIFT  &kp Z   &kp X     &kp C   &kp V     &kp B        &kp N      &kp M          &kp COMMA  &kp PERIOD  &kp SLASH      &kp RSHIFT  &kp DEL    &kp PRINTSCREEN
-&kp LCTRL   &mo 1   &kp LALT  &mo 2   &kp LWIN  &kp SPACE    &kp SPACE  &kp RIGHT_WIN  &mo 2      &mo 1       &kp RIGHT_ALT  &kp RCTRL   &kp CLCK   &tog 3
+&kp GRAVE              &kp N1  &kp N2    &kp N3  &kp N4    &kp N5       &kp N6     &kp N7         &kp N8     &kp N9      &kp N0         &kp MINUS   &kp EQUAL  &kp C_AL_MAIL
+&kp TAB                &kp Q   &kp W     &kp E   &kp R     &kp T        &kp Y      &kp U          &kp I      &kp O       &kp P          &kp LBKT    &kp RBKT   &kp BACKSPACE
+&keychord (ESC) LC(B)  &kp A   &kp S     &kp D   &kp F     &kp G        &kp H      &kp J          &kp K      &kp L       &kp SEMI       &kp SQT     &kp BSLH   &kp ENTER
+&kp LSHIFT             &kp Z   &kp X     &kp C   &kp V     &kp B        &kp N      &kp M          &kp COMMA  &kp PERIOD  &kp SLASH      &kp RSHIFT  &kp DEL    &kp PRINTSCREEN
+&kp LCTRL              &mo 1   &kp LALT  &mo 2   &kp LWIN  &kp SPACE    &kp SPACE  &kp RIGHT_WIN  &mo 2      &mo 1       &kp RIGHT_ALT  &kp RCTRL   &kp CLCK   &tog 3
             >;
         };
 
