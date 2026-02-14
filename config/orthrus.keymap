@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/modifiers.h>
 
 // Edited on https://nickcoutsos.github.io/keymap-editor because you cannot convice me
 // editing this on a text editor is better than the GUI, and Oh, I love Neovim trust me.
@@ -39,6 +40,7 @@
 
             #binding-cells = <0>;
             mods = <(MOD_RGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI)>;
         };
 
         dual_rwin: dual_rwin {
@@ -48,6 +50,7 @@
 
             #binding-cells = <0>;
             mods = <(MOD_LGUI)>;
+            keep-mods = <(MOD_LGUI|MOD_RGUI)>;
         };
     };
 
