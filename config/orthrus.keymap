@@ -26,12 +26,6 @@
             key-positions = <37 38>;
             timeout-ms = <50>;
         };
-
-        altgr_combo {
-            bindings = <&kp RIGHT_ALT>;
-            key-positions = <59 64>;
-            timeout-ms = <150>;
-        };
     };
 
     behaviors {
@@ -70,11 +64,11 @@
 
         VIM-LIKE_ARROWS {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans    &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans    &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans    &trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans    &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &kp RALT  &trans  &trans    &trans          &trans          &kp RALT      &trans           &trans  &trans  &trans  &trans
             >;
         };
 
