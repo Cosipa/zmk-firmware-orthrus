@@ -4,10 +4,10 @@
 # control, add individual board + shield combinations to
 # the `include` property
 ---
-include:
-  - board: nice_nano
+include: # nice_nano_v2 is nice_nano on the main branch
+  - board: nice_nano_v2
     shield: orthrus_left
-  - board: nice_nano
+  - board: nice_nano_v2
     shield: orthrus_right
-  - board: nice_nano
+  - board: nice_nano_v2
     shield: settings_reset
