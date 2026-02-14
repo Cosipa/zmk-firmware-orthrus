@@ -1,0 +1,5 @@
+To upgrade version pin:
+
+You need to edit the config/west.yml file in your zmk-config
+
+You need to edit .github/workflows/build.yml in your zmk-config
