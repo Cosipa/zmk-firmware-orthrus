@@ -26,22 +26,25 @@
 };
 
 / {
-    soft_off_wakers {
-        compatible = "zmk,soft-off-wakeup-sources";
-        wakeup-sources = <&gpio_key_soft_off_right>;
-    };
-
-    soft_off_gpio_keys_right {
+    /* Define the physical key */
+    gpio_keys {
         compatible = "gpio-keys";
-        gpio_key_soft_off_right: gpio_key_soft_off_right {
+        soft_off_gpio_key_right: soft_off_gpio_key_right {
             gpios = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
         };
     };
 
-    soft_off_triggers_right {
+    /* Define the wakeup trigger logic */
+    soft_off_wakers_right: soft_off_wakers_right {
         compatible = "zmk,gpio-key-wakeup-trigger";
-        trigger = <&gpio_key_soft_off_right>;
+        trigger = <&soft_off_gpio_key_right>;
         wakeup-source;
         extra-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;
+    };
+
+    /* Register the trigger as a source */
+    soft_off_wakeup_sources_right {
+        compatible = "zmk,soft-off-wakeup-sources";
+        wakeup-sources = <&soft_off_wakers_right>;
     };
 };
