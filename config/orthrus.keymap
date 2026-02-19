@@ -37,6 +37,14 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        soft_off_chill: soft_off_chill {
+            compatible = "zmk,behavior-soft-off";
+            label = "SOFT_OFF_CHILL";
+            #binding-cells = <0>;
+            hold-time-ms = <5000>;
+            split-peripheral-off-on-press;
+        };
     };
 
     keymap {
@@ -64,11 +72,11 @@
 
         VIM-LIKE_ARROWS {
             bindings = <
-&trans  &trans  &trans  &trans    &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans    &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans    &trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans    &trans  &trans    &trans          &trans          &trans        &trans           &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &kp RALT  &trans  &trans    &trans          &trans          &kp RALT      &trans           &trans  &trans  &trans  &trans
+&soft_off_chill  &trans  &trans  &trans    &trans  &trans    &soft_off_chill  &trans          &trans        &trans           &trans  &trans  &trans  &trans
+&trans           &trans  &trans  &trans    &trans  &trans    &trans           &trans          &trans        &trans           &trans  &trans  &trans  &trans
+&trans           &trans  &trans  &trans    &trans  &trans    &kp LEFT_ARROW   &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans  &trans  &trans
+&trans           &trans  &trans  &trans    &trans  &trans    &trans           &trans          &trans        &trans           &trans  &trans  &trans  &trans
+&trans           &trans  &trans  &kp RALT  &trans  &trans    &trans           &trans          &kp RALT      &trans           &trans  &trans  &trans  &trans
             >;
         };
 
