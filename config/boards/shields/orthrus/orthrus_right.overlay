@@ -25,29 +25,29 @@
         ;
 };
 
-// specific key position as a "GPIO key" used for soft off wakeup
-gpio_keys {
-    compatible = "gpio-keys";
-    // Top Row on Right Side
-    soft_off_gpio_key_right: soft_off_gpio_key_right {
-        // Row 0 Pin: &pro_micro 19 
-        gpios = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; 
+/ {
+    // specific key position as a "GPIO key" used for soft off wakeup
+    gpio_keys {
+        compatible = "gpio-keys";
+        // Top Row on Right Side
+        soft_off_gpio_key_right: soft_off_gpio_key_right {
+            // Row 0 Pin: &pro_micro 0 
+            gpios = <&pro_micro 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>; 
+        };
     };
-};
 
-// Define the trigger
-soft_off_wakers {
-    compatible = "zmk,gpio-key-wakeup-trigger";
-    
-    trigger = <&soft_off_gpio_key_right>;
-    wakeup-source;
-    
-    // Column 0 Pin on Right Side: &pro_micro 3
-    extra-gpios = <&pro_micro 3 GPIO_ACTIVE_HIGH>; 
-};
+    // Define the trigger
+    soft_off_wakers {
+        compatible = "zmk,gpio-key-wakeup-trigger";
+        trigger = <&soft_off_gpio_key_right>;
+        wakeup-source;
+        // Column 0 Pin on Right Side: &pro_micro 9
+        extra-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>; 
+    };
 
-// Register wake up source
-soft_off_wakeup_sources {
-    compatible = "zmk,soft-off-wakeup-sources";
-    wakeup-sources = <&soft_off_wakers>;
+    // Register wake up source
+    soft_off_wakeup_sources {
+        compatible = "zmk,soft-off-wakeup-sources";
+        wakeup-sources = <&soft_off_wakers>;
+    };
 };
