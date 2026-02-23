@@ -10,7 +10,7 @@
         compatible = "zmk,combos";
 
         symbol_combo {
-            bindings = <&mo 4>;
+            bindings = <&mo 3>;
             key-positions = <60 63>;
             timeout-ms = <200>;
         };
@@ -42,8 +42,43 @@
             compatible = "zmk,behavior-soft-off";
             label = "SOFT_OFF_CHILL";
             #binding-cells = <0>;
-            hold-time-ms = <5000>;
             split-peripheral-off-on-press;
+        };
+
+        left_h: left_h {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LEFT_H";
+            bindings = <&kp H>, <&kp LEFT_ARROW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+        };
+
+        down_j: down_j {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOWN_J";
+            bindings = <&kp J>, <&kp DOWN_ARROW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+        };
+
+        up_k: up_k {
+            compatible = "zmk,behavior-mod-morph";
+            label = "UP_K";
+            bindings = <&kp K>, <&kp UP_ARROW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
+        };
+
+        right_l: right_l {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RIGHT_L";
+            bindings = <&kp L>, <&kp RIGHT_ARROW>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RALT)>;
         };
     };
 
@@ -52,31 +87,21 @@
 
         MAIN {
             bindings = <
-&kp GRAVE            &kp N1  &kp N2    &kp N3  &kp N4    &kp N5       &kp N6     &kp N7         &kp N8     &kp N9      &kp N0         &kp MINUS   &kp EQUAL  &kp C_AL_MAIL
-&kp TAB              &kp Q   &kp W     &kp E   &kp R     &kp T        &kp Y      &kp U          &kp I      &kp O       &kp P          &kp LBKT    &kp RBKT   &kp BACKSPACE
-&keychord LC(B) ESC  &kp A   &kp S     &kp D   &kp F     &kp G        &kp H      &kp J          &kp K      &kp L       &kp SEMI       &kp SQT     &kp BSLH   &kp ENTER
-&kp LSHIFT           &kp Z   &kp X     &kp C   &kp V     &kp B        &kp N      &kp M          &kp COMMA  &kp PERIOD  &kp SLASH      &kp RSHIFT  &kp DEL    &kp PRINTSCREEN
-&kp LCTRL            &mo 1   &kp LALT  &mo 2   &kp LWIN  &kp SPACE    &kp SPACE  &kp RIGHT_WIN  &mo 2      &mo 1       &kp RIGHT_ALT  &kp RCTRL   &kp CLCK   &tog 3
+&kp GRAVE            &kp N1  &kp N2    &kp N3    &kp N4    &kp N5       &kp N6     &kp N7         &kp N8     &kp N9      &kp N0         &kp MINUS   &kp EQUAL  &kp C_AL_MAIL
+&kp TAB              &kp Q   &kp W     &kp E     &kp R     &kp T        &kp Y      &kp U          &kp I      &kp O       &kp P          &kp LBKT    &kp RBKT   &kp BACKSPACE
+&keychord LC(B) ESC  &kp A   &kp S     &kp D     &kp F     &kp G        &left_h    &down_j        &up_k      &right_l    &kp SEMI       &kp SQT     &kp BSLH   &kp ENTER
+&kp LSHIFT           &kp Z   &kp X     &kp C     &kp V     &kp B        &kp N      &kp M          &kp COMMA  &kp PERIOD  &kp SLASH      &kp RSHIFT  &kp DEL    &kp PRINTSCREEN
+&kp LCTRL            &mo 1   &kp LALT  &kp RALT  &kp LWIN  &kp SPACE    &kp SPACE  &kp RIGHT_WIN  &kp RALT   &mo 1       &kp RIGHT_ALT  &kp RCTRL   &kp CLCK   &tog 2
             >;
         };
 
         FUNCTIONS {
             bindings = <
-&bt BT_NXT      &kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &bt BT_CLR
-&bootloader     &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans   &trans   &trans   &bootloader
-&bt BT_CLR_ALL  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans   &trans   &trans   &bt BT_CLR_ALL
-&trans          &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans   &trans   &trans   &trans
-&trans          &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans   &trans   &trans   &trans
-            >;
-        };
-
-        VIM-LIKE_ARROWS {
-            bindings = <
-&soft_off_chill  &trans  &trans  &trans    &trans  &trans    &soft_off_chill  &trans          &trans        &trans           &trans  &trans  &trans  &trans
-&trans           &trans  &trans  &trans    &trans  &trans    &trans           &trans          &trans        &trans           &trans  &trans  &trans  &trans
-&trans           &trans  &trans  &trans    &trans  &trans    &kp LEFT_ARROW   &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans  &trans  &trans
-&trans           &trans  &trans  &trans    &trans  &trans    &trans           &trans          &trans        &trans           &trans  &trans  &trans  &trans
-&trans           &trans  &trans  &kp RALT  &trans  &trans    &trans           &trans          &kp RALT      &trans           &trans  &trans  &trans  &trans
+&soft_off_chill  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12  &bt BT_CLR
+&bootloader      &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans   &trans   &trans   &bootloader
+&bt BT_CLR_ALL   &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans   &trans   &trans   &bt BT_CLR_ALL
+&trans           &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans   &trans   &trans   &trans
+&trans           &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans   &trans   &trans   &trans
             >;
         };
 
