@@ -25,6 +25,7 @@
             bindings = <&kp BACKSPACE>;
             key-positions = <37 38>;
             timeout-ms = <50>;
+            layers = <0 1>;
         };
     };
 
